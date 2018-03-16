@@ -1,0 +1,46 @@
+.create-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .mat-card-content>:first-child {
+    margin: 20px auto 0 auto;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  .create-card {
+      width: 500px;
+      border-radius: 5px;
+      overflow: hidden;
+  }
+
+  .mat-card-header {
+    background: rgb(63, 81, 181);
+    color: #ffffff;
+    margin-top: -25px !important;
+    margin-left: -25px;
+    margin-right: -25px;
+    min-height: 50px;
+  }
+
+  .title {
+    position: relative;
+    top: 10px;
+    left: 5px;
+    font-size: 24px;
+}
+
+.center {
+    width: 500px;
+    margin: 5% auto 0 auto;
+}
+
+.mat-card-actions{
+  display: flex;
+  flex-direction: row-reverse;
+  margin-right: 10px;
+  margin-bottom: -10px;
+}

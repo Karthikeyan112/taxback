@@ -1,0 +1,18 @@
+.header {
+    height: 60px;
+    color: #ffffff;
+    background: rgb(63, 81, 181);
+    margin: -30px -8px 30px -8px;
+    font-size: 24px;
+    top: 10px;
+}
+
+.header .title {
+    position: relative;
+    top: 14px;
+    left: 10px;
+}
+
+.container {
+    padding: 10px;
+}

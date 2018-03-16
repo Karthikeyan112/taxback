@@ -1,0 +1,29 @@
+<div class="container">
+<mat-card class="detail-card">
+    <mat-card-header class="header">
+      
+      <mat-card-title class="title"><button mat-button (click)="goBack()"><--</button> {{name}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="box">
+        <div>Tranx Id : </div>
+        <div>{{details.id}}</div>
+      </div>
+      <div class="box">
+        <div>User : </div>
+        <div>{{details.user}}</div>
+    </div>
+    <div class="box">
+      <div>Tranx Date : </div>
+      <div>{{details.txn_date}}</div>
+    </div>
+    <div class="box">
+      <div>Amount : </div>
+      <div>{{details.amount | currency: details.currency}}</div>
+    </div>
+    </mat-card-content>
+    <mat-card-actions class="action">
+      <button mat-raised-button (click)="editDetails()" color="primary">Edit</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

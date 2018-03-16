@@ -1,0 +1,55 @@
+
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container">
+  <button mat-raised-button (click)="createNew()" color="primary">Add Transaction</button>
+</div>
+<div class="container" >
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+</div>
+<div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource">
+  
+      <!-- Id Column -->
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+        <mat-cell *matCellDef="let tran"> {{tran.id}} </mat-cell>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="user">
+        <mat-header-cell *matHeaderCellDef> User </mat-header-cell>
+        <mat-cell *matCellDef="let tran"> {{tran.user}} </mat-cell>
+      </ng-container>
+  
+      <!-- Amount Column -->
+      <ng-container matColumnDef="amount">
+        <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
+        <mat-cell *matCellDef="let tran"> {{ tran.amount | currency: tran.currency}} </mat-cell>
+      </ng-container>
+
+      <!-- Date Column -->
+      <ng-container matColumnDef="txn_date">
+        <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+        <mat-cell *matCellDef="let tran"> {{tran.txn_date}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="Options">
+          <mat-header-cell *matHeaderCellDef> Options </mat-header-cell>
+          <mat-cell *matCellDef="let tran">
+            <button mat-raised-button color="primary" (click)="getRecord(tran)">View</button>
+            <button mat-raised-button color="warn" (click)="openDialog(tran)">Remove</button>
+            <button mat-raised-button routerLink="." (click)="editTranx(tran)">Edit</button>
+          </mat-cell>
+        </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let tran; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  
+    <mat-paginator #paginator
+                   [pageSize]="10"
+                   [pageSizeOptions]="[5, 10, 20]"
+                   [showFirstLastButtons]="true">
+    </mat-paginator>
+  </div>
